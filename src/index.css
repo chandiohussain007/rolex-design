@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rolex-green: #0D422B;
+  --color-rolex-green-light: #165C3E;
+  --color-champagne: #F7F5F0;
+  --color-onyx: #1A1A1A;
+  --color-slate: #606266;
+  --color-gold: #C5A059;
+  --color-gold-light: #D4B76A;
+  --color-charcoal: #2A2A2A;
+
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ===== Lenis Smooth Scroll ===== */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow: clip;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #F7F5F0;
+  color: #1A1A1A;
+  overflow-x: hidden;
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #0D422B;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #165C3E;
+}
+
+/* ===== Textured Text Utility ===== */
+.textured-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: transparent;
+  /* We use a solid green base, then overlay a CSS radial noise/texture to simulate the stamp effect */
+  background-color: #0D422B;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E");
+  background-blend-mode: multiply;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.textured-text-light {
+  background-color: #729683;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.3'/%3E%3C/svg%3E");
+  background-blend-mode: multiply;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ===== Polaroid Card ===== */
+.polaroid-card {
+  background: white;
+  padding: 12px 12px 24px 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  transform: rotate(-2deg);
+}
+
+.polaroid-image-container {
+  background: #F4F4F4;
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.polaroid-card.right-tilt {
+  transform: rotate(3deg);
+}
+
+/* ===== Hero Text Styling ===== */
+.hero-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+}
+
+/* ===== Pill Label Styling ===== */
+.pill-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: white;
+  border: 1px solid rgba(13, 66, 43, 0.1);
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #1A1A1A;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* ===== Hotspot Labels ===== */
+.hotspot-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255,255,255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255, 0.9);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hotspot-label:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(197,160,89,0.4);
+  color: #C5A059;
+}
+
+.hotspot-label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #C5A059;
+  flex-shrink: 0;
+}
+
+/* ===== Bottom Bar Words ===== */
+.bottom-words {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 48px;
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  color: #1A1A1A;
+}
+
+/* ===== Model Card ===== */
+.model-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.model-card:hover {
+  transform: translateY(-2px);
+}
+
+.model-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.model-card:hover img {
+  transform: scale(1.05);
+}

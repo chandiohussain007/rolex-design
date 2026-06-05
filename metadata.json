@@ -1,0 +1,6 @@
+{
+  "name": "Oyster Perpetual Showcase",
+  "description": "An immersive luxury scrollytelling and interactive showcase for the Oyster Perpetual watch collection, built with React, GSAP, and Tailwind CSS.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
