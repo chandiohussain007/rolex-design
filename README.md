@@ -1,20 +1,6 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Rolex Design Clone
 
-# Run and deploy your AI Studio app
+A web design project inspired by @ayzz.thedesigner.
 
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/713af5ba-2a8d-43c2-b1ae-bf858a21838b
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Overview
+This project focuses on replicating the premium aesthetics of luxury watch brands using modern web technologies.
